@@ -1,3 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.whatssumap_bg {
+  display: flex;
+}
+
+.whatssumap_bg_image {
+  width: 100vw;
+  height: 100vw;
+}
+
 /*whatssu 애니메이션*/
 .whatssu > img {
   position: absolute;
