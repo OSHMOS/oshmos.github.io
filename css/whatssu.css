@@ -5,6 +5,8 @@
 
 .whatssumap_bg {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .whatssumap_bg_image {
@@ -13,7 +15,7 @@
 }
 
 /*whatssu 애니메이션*/
-.whatssu > img {
+.whatssumap_bg_animated_font {
   position: absolute;
   left: 39%;
   top: 15px;
