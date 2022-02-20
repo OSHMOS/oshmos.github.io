@@ -99,7 +99,7 @@
           <section class="col-4 center-text work">
             <div class="each-work">
               <a href="whatssu.html">
-                <img src="./images/work/work-two.jpg" alt="work image 2">
+                <img src="./images/work/work-two.jpg">
                 <div class="work-overlay">
                   <h2>WHATSSU</h2>
                   <p><b>My First PJT</b></p>
@@ -108,12 +108,30 @@
             </div>
 
             <div class="work-detail">
-              <h3 class="work-title">WHATSSU</h3>
+              <h3 class="work-title work-side">WHATSSU</h3>
               <a href="whatssu.html" class="work-repo">Click!</a>
             </div>
           </section>
 
           <!-- Work 3 -->
+          <section class="col-4 center-text work">
+            <div class="each-work">
+              <a href="">
+                <img src="./images/work/work-three.png" height="175px;" class="right">
+                <div class="work-overlay">
+                  <h2>Tetris</h2>
+                  <p><b>Coming Soon!</b></p>
+                </div>
+              </a>
+            </div>
+
+            <div class="work-detail">
+              <h3 class="work-title work-side">Tetris</h3>
+              <a href="dev'Rent.html" class="work-repo">Click!</a>
+            </div>
+          </section>
+
+          <!-- Work 4 -->
           <section class="col-4 center-text work">
             <div class="each-work">
               <a href="dev'Rent.html">
@@ -135,10 +153,14 @@
 
       <!-- Footer -->
       <footer>
-        <p>&copy; 2022 OSHMOS</p> <!--자동으로 바뀌게 해보자!-->
+        <p>&copy; <span id="todayYear"></span> OSHMOS</p> <!--자동으로 바뀌게 해보자!-->
       </footer>
 
     </div>
-
+    <script>
+      const YEAR = document.querySelector("#todayYear");
+      let todayYear = new Date().getFullYear();
+      YEAR.innerHTML = todayYear;
+    </script>
   </body>
 </html>
