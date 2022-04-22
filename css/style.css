@@ -2,7 +2,11 @@ body {
     width: 100vw;
     height: 100vh;
 }
-
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 #clock {
     font-size: 110px;
 }
