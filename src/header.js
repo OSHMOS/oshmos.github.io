@@ -19,4 +19,4 @@ function whatTimeIsIt() {
 header.style.background = colors[0];
 whatTimeIsIt();
 setInterval(whatTimeIsIt, 1000);
-setInterval(changeBoxBgColor, 1000);
+setInterval(changeBoxBgColor, 5000);
