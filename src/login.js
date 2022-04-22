@@ -1,13 +1,11 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const clock = document.querySelector('#clock');
-const header = document.querySelector('.header');
+const showClock = document.querySelector('#clock');
 const question = document.querySelector('#question');
 const greeting = document.querySelector('#greeting');
 
 const HIDDEN_CLASSNAME = 'hidden';
 const USERNAME_KEY = "username";
-
 
 function onLogInSubmit(e) {
     loginForm.classList.add(HIDDEN_CLASSNAME);
@@ -21,16 +19,6 @@ function paintGreetings(username) {
     clock.classList.remove(HIDDEN_CLASSNAME);
 }
 
-function whatTimeIsIt() {
-    const date = new Date();
-    const hour = String(date.getHours()).padStart(2, '0');
-    const min = String(date.getMinutes()).padStart(2, '0');
-    const sec = String(date.getSeconds()).padStart(2, '0');
-    clock.innerHTML = `${hour}:${min}:${sec}`;
-}
-
-whatTimeIsIt();
-setInterval(whatTimeIsIt, 1000);
 loginForm.addEventListener("submit", onLogInSubmit);
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);

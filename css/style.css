@@ -3,10 +3,9 @@ body {
     height: 100vh;
 }
 
-.main {
-    
+#clock {
+    font-size: 110px;
 }
-
 
 h1 {
     color: white;
