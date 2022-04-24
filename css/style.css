@@ -1,27 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
     width: 100vw;
     height: 100vh;
-}
-.box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
+#greeting_ {
+  position: fixed;
+  top: 100px;
+}
+#greeting_ form{
+  display: flex;
+  flex-direction: column;
+}
+#greeting_ h1 {
+  color: white;
+  text-align: center;
+}
+
+#todo_ {
+  position: fixed;
+  bottom: 260px;
+}
+#todo_ form {
+  display: flex;
+  justify-content: center;
+}
+#todo_ span {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+#weather {
+  color: white;
+  position: fixed;
+  bottom: 0px;
+}
+/* h1 {
+  color: white;
+} */
 #clock {
     font-size: 110px;
 }
-
-h1 {
-    color: white;
-    text-align: center;
-}
-
-form {
-    display: flex;
-    justify-content: center;
-    /* align-content: center; */
-}
-
 .hidden {
     display: none;
+}
+
+#todo-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+  color: red;
 }
