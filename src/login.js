@@ -1,12 +1,7 @@
-<<<<<<< Updated upstream
 const loginForm = document.querySelector('#login-form');
 const loginInput = document.querySelector('#login-form input');
 const showClock = document.querySelector('#clock');
-=======
-const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
 
->>>>>>> Stashed changes
 const question = document.querySelector('#question');
 const greeting = document.querySelector('#greeting');
 
@@ -19,18 +14,6 @@ const toDoList = document.querySelector('#toDo-list');
 const HIDDEN_CLASSNAME = 'hidden';
 const USERNAME_KEY = 'username';
 
-<<<<<<< Updated upstream
-function onLogInSubmit(e) {
-  loginForm.classList.add(HIDDEN_CLASSNAME);
-  const username = loginInput.value;
-  localStorage.setItem('username', username);
-}
-
-function paintGreetings(username) {
-  greeting.innerHTML = `How are you? ${username}`;
-  greeting.classList.remove(HIDDEN_CLASSNAME);
-  clock.classList.remove(HIDDEN_CLASSNAME);
-=======
 function onLogInSubmit() {
     loginForm.classList.add(HIDDEN_CLASSNAME);
     const username = loginInput.value;
@@ -53,7 +36,6 @@ function paintGreetings(username) {
 
 function paintToDos(toDo) {
     toDoList.innerHTML = `${toDo}`
->>>>>>> Stashed changes
 }
 
 loginForm.addEventListener('submit', onLogInSubmit);
@@ -64,13 +46,6 @@ if (savedUsername === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener('submit', onLogInSubmit);
 } else {
-<<<<<<< Updated upstream
-  loginForm.classList.remove(HIDDEN_CLASSNAME);
-  loginInput.classList.add(HIDDEN_CLASSNAME);
-  question.classList.add(HIDDEN_CLASSNAME);
-  paintGreetings(savedUsername);
-}
-=======
     loginForm.classList.add(HIDDEN_CLASSNAME);
     question.classList.add(HIDDEN_CLASSNAME);
     paintGreetings(savedUsername);
@@ -88,4 +63,3 @@ if (savedToDoList === null) {
     a
     paintToDos(savedToDoList);
 }
->>>>>>> Stashed changes
