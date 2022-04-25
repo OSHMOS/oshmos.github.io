@@ -14,12 +14,6 @@ function onLogInSubmit() {
     localStorage.setItem(USERNAME_KEY, username);
 }
 
-function onToDoSubmit() {
-    toDoForm.classList.add(HIDDEN_CLASSNAME);
-    const toDoList = toDoInput.value;
-    localStorage.setItem("toDoList", toDoList);
-}
-
 function paintGreetings(username) {
     greeting.innerHTML = `How are you? ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
@@ -35,6 +29,7 @@ if (savedUsername === null) {
   loginForm.addEventListener('submit', onLogInSubmit);
 } else {
     loginForm.classList.add(HIDDEN_CLASSNAME);
+    loginInput.classList.add(HIDDEN_CLASSNAME);
     question.classList.add(HIDDEN_CLASSNAME);
     paintGreetings(savedUsername);
 }
