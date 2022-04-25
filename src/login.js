@@ -5,12 +5,6 @@ const showClock = document.querySelector('#clock');
 const question = document.querySelector('#question');
 const greeting = document.querySelector('#greeting');
 
-const today = document.querySelector('#today');
-const toDoForm = document.querySelector('#toDo-form');
-const toDoInput = document.querySelector('#toDo-form input');
-
-const toDoList = document.querySelector('#toDo-list');
-
 const HIDDEN_CLASSNAME = 'hidden';
 const USERNAME_KEY = 'username';
 
@@ -30,12 +24,6 @@ function paintGreetings(username) {
     greeting.innerHTML = `How are you? ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
     clock.classList.remove(HIDDEN_CLASSNAME);
-    today.classList.remove(HIDDEN_CLASSNAME);
-    toDoForm.classList.remove(HIDDEN_CLASSNAME);
-}
-
-function paintToDos(toDo) {
-    toDoList.innerHTML = `${toDo}`
 }
 
 loginForm.addEventListener('submit', onLogInSubmit);
@@ -49,17 +37,4 @@ if (savedUsername === null) {
     loginForm.classList.add(HIDDEN_CLASSNAME);
     question.classList.add(HIDDEN_CLASSNAME);
     paintGreetings(savedUsername);
-}
-
-toDoForm.addEventListener('submit', onToDoSubmit);
-
-const savedToDoList = localStorage.getItem("toDoList");
-
-if (savedToDoList === null) {
-    toDoForm.classList.remove(HIDDEN_CLASSNAME);
-    toDoForm.addEventListener('submit', onToDoSubmit);
-} else {
-    toDoForm.classList.add(HIDDEN_CLASSNAME);
-    a
-    paintToDos(savedToDoList);
 }
