@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.whatssumap_bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatssumap_bg_image {
+  width: 100vw;
+  height: 100vw;
+}
+
+/*whatssu 애니메이션*/
+.whatssumap_bg_animated_font {
+  position: absolute;
+  left: 39%;
+  top: 15px;
+  width: 480px;
+  animation: ani 1s infinite alternate;
+}
+
+@keyframes ani {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 50px);
+  }
+}

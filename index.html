@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Who is OSHMOS?</title>
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+    <!-- Main Container -->
+    <div class="container">
+
+      <!-- Header -->
+      <header class="row">
+        <div class="col-6 profile-image-box">
+          <a href="">
+            <img src="./images/main/mylogo.png" alt="Profile Logo Image" class="profile-image">
+          </a>
+        </div>
+
+        <div class="col-6 profile-title">
+          <h1 class="name-title">OSHMOS</h1>
+          <h4 class="name-title">Full-Stack-Developer</h4>
+        </div>
+      </header>
+
+      <hr>
+
+      <!-- Main Image -->
+      <div class="row">
+        <div class="main-image col-12 center-text">
+          <img src="./images/main/cosmos.jpeg"
+               srcset="./images/main/cosmos.jpeg 400w, 
+               ./images/main/cosmos.jpeg 600w,
+               ./images/main/cosmos.jpeg 800w"
+               sizes="100vw"
+               alt="main image">
+          <div class="main-overlay center-text">
+            <p class="main-overlay-text">I'm learning to be FullStack-Dev.<br><br><br><br> Welcome my Page!!! <br><br><br><br><br> OSHMOS</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Me -->
+      <section class="row">
+        <div class="col-12 feature-title">
+          <h2>About Me</h2>
+        </div>
+
+        <div class="row about">
+          <div class="col-4 about-flex">
+            <div class="about-profile center-text">
+              <img src="./images/main/myprofile.jpeg" alt="About Profile Image" class="about-image">
+            </div>
+          </div>
+
+          <div class="col-8 about-flex">
+            <p class="about-text">
+                <br><br>
+                My name is Oh Seunghyun. I have a nickname that I use instead of a name. That's OSHMOS!
+              <br><br><br><br>
+              To tell you the origin, Cosmos, the word for the world, and OSH, the initials of my name, are combined, meaning that I am at the center of the world.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Works -->
+      <div class="row">
+        <div class="col-12 feature-title">
+          <h2>My Career</h2>
+        </div>
+
+        <!-- Each Portfolio Section -->
+        <div class="row">
+
+          <!-- Work 1 -->
+          <section class="col-4 center-text work">
+            <div class="each-work">
+              <a href="https://github.com/OSHMOS">
+                <img src="./images/main/mylogo.png" width="200px;" height="175px;"class="left">
+                <div class="work-overlay">
+                  <h2>OSHMOS</h2>
+                  <p><b>My Github Profile</b></p>
+                </div>
+              </a>
+            </div>
+
+            <div class="work-detail">
+              <h3 class="work-title work-side">OSHMOS</h3>
+              <a href="https://github.com/OSHMOS" class="work-repo">Click!</a>
+            </div>
+          </section>
+
+          <!-- Work 2 -->
+          <section class="col-4 center-text work">
+            <div class="each-work">
+              <a href="whatssu.html">
+                <img src="./images/work/work-two.jpg">
+                <div class="work-overlay">
+                  <h2>WHATSSU</h2>
+                  <p><b>My First PJT</b></p>
+                </div>
+              </a>
+            </div>
+
+            <div class="work-detail">
+              <h3 class="work-title work-side">WHATSSU</h3>
+              <a href="whatssu.html" class="work-repo">Click!</a>
+            </div>
+          </section>
+
+          <!-- Work 3 -->
+          <section class="col-4 center-text work">
+            <div class="each-work">
+              <a href="">
+                <img src="./images/work/work-three.png" height="175px;" class="right">
+                <div class="work-overlay">
+                  <h2>Tetris</h2>
+                  <p><b>Coming Soon!</b></p>
+                </div>
+              </a>
+            </div>
+
+            <div class="work-detail">
+              <h3 class="work-title work-side">Tetris</h3>
+              <a href="" class="work-repo">Click!</a>
+            </div>
+          </section>
+
+          <!-- Work 4 -->
+          <section class="col-4 center-text work">
+            <div class="each-work">
+              <a href="camera.html">
+                <img src="./images/work/web camera.png" height="175px;" class="right">
+                <div class="work-overlay">
+                  <h2>Web Camera</h2>
+                  <p><b>My Toy PJT</b></p>
+                </div>
+              </a>
+            </div>
+
+            <div class="work-detail">
+              <h3 class="work-title work-side">Web Camera</h3>
+              <a href="camera.html" class="work-repo">Click!</a>
+            </div>
+          </section>
+
+        <!-- Work 5 -->
+        <section class="col-4 center-text work">
+          <div class="each-work">
+            <a href="dev'Rent.html">
+              <img src="./images/work/work-three.png" height="175px;" class="right">
+              <div class="work-overlay">
+                <h2>dev'Rent</h2>
+                <p><b>Coming Soon!</b></p>
+              </div>
+            </a>
+          </div>
+
+          <div class="work-detail">
+            <h3 class="work-title work-side">dev'Rent</h3>
+            <a href="dev'Rent.html" class="work-repo">Click!</a>
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; <span id="todayYear"></span> OSHMOS</p>
+      </footer>
+
+    </div>
+    <script>
+      const YEAR = document.querySelector("#todayYear");
+      let todayYear = new Date().getFullYear();
+      YEAR.innerHTML = todayYear;
+    </script>
+  </body>
+</html>
