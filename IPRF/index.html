@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Intrinsic-Guided Photorealistic Style Transfer for Radiance Fields">
+  <meta name="keywords" content="Intrinsic-Guided Photorealistic Style Transfer for Radiance Fields, 3D Photorealistic Style Transfer, IPRF, Neural Radiance Fields, NeRF, Plenoxels">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intrinsic-Guided Photorealistic Style Transfer for Radiance Fields</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- Favicon -->
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://oshmos.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/OSHMOS/BPPC">
+            BPPC
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Intrinsic-Guided Photorealistic Style Transfer for Radiance Fields</h1>
+          <h4 class="title is-4">ACM Multimedia<br>APP3DV'25</h4>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Hyunseo Koh<sup>*</sup>,</span>
+            <span class="author-block">Seunghyun Oh<sup>*</sup>,</span>
+            <span class="author-block">Jungyun Jang<sup>*</sup>,</span>
+            <span class="author-block">Heewon Kim<sup></sup></span>
+            <!-- <span class="author-block">[공동저자 이름]<sup>2</sup></span> -->
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup></sup>Soongsil University</span>
+            <!-- <span class="author-block"><sup>2</sup>[공동저자 소속]</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/10vp2SWByAJGr-Ccrw68c2hTepsMr5di9/view?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="[ACM DL 링크]"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>ACM DL (Coming Soon!)</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://drive.google.com/drive/folders/14U3LlyN9n3qSNfQ_o-pDf8N_cbGF_lUD?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Videos</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/OSHMOS/IPRF.git"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+                </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser.png" alt="Representative Image" style="max-width:100%; margin-bottom:20px;" />
+      <h2 class="subtitle has-text-centered">
+        <span style="font-size:1.0em; font-weight:normal;">We propose Intrinsic-guided Photorealistic Style Transfer (IPRF),<br>a novel framework that leverages intrinsic image decomposition for radiance fields,<br>enabling photorealistic style transfer by decoupling scenes into albedo and shading components.</span>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Photorealistic style transfer in neural radiance fields (NeRF) aims to modify the color characteristics of a 3D scene without altering its underlying geometry.
+            Although recent approaches have achieved promising results, they often suffer from limited style diversity, focusing primarily on global color shifts.
+            In contrast, artistic style transfer methods offer richer stylization but usually distort scene geometry, thereby reducing realism.
+          </p>
+          <p>
+            In this work, we present Intrinsic-guided Photorealistic Style Transfer (IPRF), a novel framework that leverages intrinsic image decomposition to decouple a scene into albedo and shading components.
+            By introducing tailored loss functions in both domains, IPRF aligns the texture and color of the content scene to those of a style image while faithfully preserving geometric structure and lighting.
+          </p>
+          <p>
+            Furthermore, we propose Tuning-assisted Style Interpolation (TSI), a real-time technique for exploring the trade-off between photorealism and artistic expression through a weighted combination of albedo-oriented and shading-oriented radiance fields.
+            Experimental results demonstrate that IPRF achieves a superior balance between naturalism and artistic expression compared to state-of-the-art methods, offering a versatile solution for 3D content creation in various fields, including digital art, virtual reality, and game design.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    
+    <!-- Paper pipelines. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3", style="margin-top: 80px;">Intrinsic-Guided Photorealistic Style Transfer (IPRF)</h2>
+        <div class="publication-video", style="margin-bottom: -130px">
+          <img src="./static/images/Style Transfer Pipeline.png"
+          class="interpolation-image"
+          alt="Interpolate start reference image."/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            <b>IPRF</b> extracts albedo and shading from rendered and style images via neural intrinsic image decomposition and integrates them into the style‑transfer loss.
+            Albedo encodes color that is invariant to lighting, whereas shading captures shadows that depend on illumination and viewpoint.
+            Using a pretrained network, IPRF predicts these components and quantitatively compares their characteristics between the style and content images with VGG features.
+            The overall objective includes albedo‑ and shading‑matching terms together with a total variation (TV) regularizer to maintain geometric and textural consistency during transfer.
+            As a result, the method achieves photorealistic style transfer that preserves the original scene’s structure and texture while transferring the style image’s colors and the content image’s shadow characteristics.
+          </p>
+        </div>
+
+        <h2 class="title is-3", style="margin-top: 110px;">Tuning-Assisted Style Interpolation (TSI)</h2>
+        <div class="publication-video", style="margin-bottom: -260px">
+          <img src="./static/images/Style Interpolation Pipeline.png"
+          class="interpolation-image"
+          alt="Interpolate start reference image."/>
+        </div>
+        <div class="content has-text-justified">
+          <p> 
+            <b>TSI</b> generates diverse styles by adjusting the contributions of two intrinsic image components<i>—albedo and shading—</i>without any additional training.
+            It leverages two optimized radiance fields: one that models style albedo only and another that models content shading only.
+            By linearly combining these fields with a user-controlled weight, <b>TSI</b> provides continuous style control within a 3D scene, enabling real-time exploration without costly parameter re-optimization.
+            This approach lets users intuitively tune styles and quickly preview the results.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper pipelines. -->
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+
+        <h3 class="title is-4">LLFF dataset</h3>
+        <div class="container is-max-desktop" style="margin-top:-40pt">
+          <div class="hero-body">
+            <div style="display: flex; align-items: flex-end; margin-bottom: 8px;">
+              <span style="width: 150px; margin-right: 16px; font-weight: bold; text-align: center; display: inline-block;">Style Image</span>
+              <span style="width: 220px; font-weight: bold; text-align: center; display: inline-block;">Plenoxels</span>
+              <span style="width: 220px; font-weight: bold; text-align: center; display: inline-block;">FPRF</span>
+              <span style="width: 220px; font-weight: bold; text-align: center; display: inline-block;">IPRF</span>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <img src="static/images/styles/14.jpg" alt="설명" style="width: 150px; height: 150px; margin-right: 16px;">
+              <video width="640" height="360" controls autoplay loop muted>
+                <source src="static/videos_LLFF/flower_14.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <img src="static/images/styles/139.jpg" alt="설명" style="width: 150px; height: 150px; margin-right: 16px;">
+              <video width="640" height="360" controls autoplay loop muted>
+                <source src="static/videos_LLFF/horns_139.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <img src="static/images/styles/122.jpg" alt="설명" style="width: 150px; margin-right: 16px;">
+              <video width="640" height="360" controls autoplay loop muted>
+                <source src="static/videos_LLFF/room_122.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <!-- <pre><code>@inproceedings{kim2024fprf,
+      title={{FPRF}: Feed-Forward Photorealistic Style Transfer of Large-Scale {3D} Neural Radiance Fields}, 
+      author={GeonU Kim and Kim Youwang and Tae-Hyun Oh},
+      year={2024},
+      booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+}</code></pre> -->
+    <pre><code>Coming Soon!</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
