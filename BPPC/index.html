@@ -22,6 +22,10 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <!-- MathJax for rendering mathematical equations -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -124,35 +128,61 @@
       </div>
       <!--/ Abstract. -->
       <hr>
-      <h2 class="title is-3">Method</h2>
+      <h2 class="title is-3">Baseball Player Pose Corrector (BPPC)</h2>
       <div>
-        <img src="./static/images/method_pipeline.png" class="interpolation-image" alt="Method Pipeline" />
+        <img src="./static/images/BPPC overview.jpg" class="interpolation-image" alt="Method Pipeline" />
       </div>
       <p>
-        Our method consists of multiple stages that refine the initial pose estimates
-        using motion prior guidance. The pipeline processes input frames and generates
-        accurate pose predictions for baseball players.
+        <b>BPPC (Baseball Player Pose Corrector)</b> is a framework that precisely refines baseball player poses via
+        two optimization steps. First, it spatiotemporally aligns 3D standard movements with the test video. Second, it
+        uses the aligned data as a reference to finely adjust keypoint locations for improved precision.
       </p>
-      <hr>
-      <h2 class="title is-3">Method</h2>
-      <div>
-        <img src="./static/images/method_pipeline.png" class="interpolation-image" alt="Method Pipeline" />
-      </div>
       <p>
-        Our method consists of multiple stages that refine the initial pose estimates
-        using motion prior guidance. The pipeline processes input frames and generates
-        accurate pose predictions for baseball players.
+        <b>4D Motion Projection</b> focuses on resolving the spatiotemporal misalignment between the 3D standard motion
+        (\(s\)) and the keypoints (\(x\)) estimated from the test video. It aligns the start and end of the swing
+        through Action Recognition using a grid sampler, compensates for individual swing pattern differences via Offset
+        Learning, and matches camera viewpoints using a projection matrix \(P\). This entire process is designed to be
+        differentiable, allowing the standard motion to be accurately projected onto the subject's position and pose in
+        the test video using gradient descent, without requiring a separate training dataset.
+      </p>
+      <p>
+        <b>Pose Refinement</b> generates the final 2D keypoints (\(y\)) based on the previously optimized standard
+        motion (\(\overline{s}^{*}\)). To effectively correct keypoints with low confidence (\(c_{f,k}\)) caused by
+        motion blur or occlusion, the framework utilizes the physical velocity <br>(\(\mathcal{L}_{vel}\)) and
+        acceleration
+        (\(\mathcal{L}_{accel}\)) information from the standard motion as constraints. This enables the precise
+        adjustment of fast-moving joints, such as wrists and elbows, according to the standard motion's trajectory,
+        ultimately resulting in accurate pose data that aligns with actual baseball swing mechanics.
       </p>
       <hr>
       <h2 class="title is-3" style="margin-top: 5px;">Results</h2>
-
-      <!-- TODO: Add result images/videos here -->
-      <div class="content has-text-justified">
-        <p>
-          Qualitative and quantitative results demonstrating the effectiveness of our approach
-          will be displayed here.
-        </p>
+      <h3 class="title is-4">Quantitative Results</h3>
+      <div style="text-align: center;">
+        <img src="./static/images/Quantitative Results.png" class="interpolation-image" alt="Method Pipeline"
+          style="max-width: 75%; display: inline-block;" />
       </div>
+      <p>
+        <b>BPPC</b> enhances keypoint estimation accuracy particularly when confidence scores are low. In the
+        low-confidence range \([0, 0.5)\), the framework achieves an accuracy improvement of over \(2.1\%\) compared to
+        HRNet and DARK
+        (HRNet-W48), whereas no notable improvement is observed in the high-confidence range \([0.9, 1.0]\). Given that
+        low confidence often results from fast-moving or occluded joints during a swing, these findings suggest that
+        prior-based optimization serves as a vital complement to data-driven Human Pose Estimation (HPE) models.
+      </p>
+      <br>
+      <h3 class="title is-4">Qualitative Results</h3>
+      <div style="text-align: center;">
+        <img src="./static/images/Qualitative Results.jpg" class="interpolation-image" alt="Method Pipeline"
+          style="max-width: 50%; display: inline-block;" />
+      </div>
+      <p>
+        <b>BPPC</b> demonstrates superior qualitative performance by refining keypoints that baseline models often fail
+        to
+        capture. As shown in the visual comparisons, BPPC accurately corrects the positions of elbows and wrists—joints
+        that are frequently affected by motion blur, occlusion, or visual similarity with the background and equipment
+        (e.g., the bat). By addressing these errors in models like HRNet-W48, BPPC ensures high-fidelity pose estimation
+        even under challenging visual conditions during high-speed batting motions.
+      </p>
       <hr>
       <h2 class="title" style="margin-top: 5px;">BibTeX</h2>
       <pre><code>@article{OH2025,
