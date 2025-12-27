@@ -195,8 +195,7 @@ body {
 
 /* Desktop: hide mobile-only elements */
 .mobile-header-labels,
-.mobile-style-images,
-.mobile-method-labels {
+.mobile-style-images {
   display: none;
 }
 
@@ -281,7 +280,7 @@ body {
   /* Show and style mobile header labels */
   .mobile-header-labels {
     display: block !important;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
 
   .mobile-header-row1 {
@@ -290,36 +289,24 @@ body {
     margin-bottom: 8px;
   }
 
+  .mobile-header-row2 {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
   /* Show and style mobile style images row */
   .mobile-style-images {
     display: flex !important;
     justify-content: space-between;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
 
   .mobile-style-images img {
     width: calc(33.333% - 6px);
     height: auto;
     object-fit: cover;
-  }
-
-  /* Mobile method labels - centered over videos */
-  .mobile-method-labels {
-    display: flex !important;
-    justify-content: space-around;
-    font-size: 11px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-align: center;
-  }
-
-  .mobile-method-labels span {
-    flex: 1;
-  }
-
-  .mobile-method-labels .ours {
-    color: #000;
   }
 
   /* Result items - hide images, show only videos stacked */
