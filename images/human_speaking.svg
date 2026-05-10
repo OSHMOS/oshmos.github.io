@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250">
+  <defs>
+    <radialGradient id="gradSpeakH" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FCA5A5" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#FCA5A5" stop-opacity="0" />
+    </radialGradient>
+    <filter id="shadowH" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-opacity="0.1" />
+    </filter>
+  </defs>
+  <circle cx="100" cy="130" r="100" fill="url(#gradSpeakH)" />
+  <g transform="translate(100, 150)">
+    <!-- Body -->
+    <path d="M -45 -10 L 45 -10 Q 60 -10 60 20 L 60 80 L -60 80 L -60 20 Q -60 -10 -45 -10 Z" fill="#F4F4F5" filter="url(#shadowH)" />
+    <!-- Yellow Shirt Accent -->
+    <path d="M -30 -10 L 30 -10 L 0 50 Z" fill="#FDE047" opacity="0.3" />
+    <!-- Neck -->
+    <rect x="-12" y="-30" width="24" height="40" fill="#FFCBB3" rx="4"/>
+    
+    <!-- Head -->
+    <rect x="-42" y="-105" width="84" height="90" rx="36" fill="#FFE2D1" filter="url(#shadowH)" />
+    
+    <!-- Hair -->
+    <path d="M -45 -60 C -50 -120, -20 -120, 0 -115 C 20 -120, 50 -120, 45 -60 C 40 -90, 20 -110, 0 -110 C -20 -110, -40 -90, -45 -60 Z" fill="#4B5563" />
+    <path d="M -42 -75 Q -30 -100 -10 -90 Q 5 -105 42 -75 Q 35 -100 0 -110 Q -35 -100 -42 -75 Z" fill="#374151" />
+    
+    <!-- Eyebrows -->
+    <path d="M -22 -62 Q -16 -65 -10 -61" stroke="#374151" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 22 -62 Q 16 -65 10 -61" stroke="#374151" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    
+    <!-- Happy Eyes Path -->
+    <path d="M -22 -52 Q -16 -58 -10 -52" stroke="#374151" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 10 -52 Q 16 -58 22 -52" stroke="#374151" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    
+    <!-- Nose -->
+    <path d="M 0 -45 L -2 -40 L 0 -39" stroke="#EBA988" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Speaking Mouth Open -->
+    <path d="M -12 -33 Q 0 -21 12 -33 Q 0 -16 -12 -33 Z" fill="#374151" />
+    <path d="M -5 -29 Q 0 -25 5 -29 Z" fill="#FCA5A5" />
+  </g>
+</svg>
